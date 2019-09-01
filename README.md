@@ -46,7 +46,7 @@ The VueStacks calendar demo utilizes general Vue.js + Firebase CRUD functions to
 
 ```updateEvent ()``` triggers the update of the event. 
 
-```getEvent ()``` is a callback function that dispatches an action in store.js (Vuex store). The action retrieves the inputted event from the database then commits a mutation. State is then updated with the retrieved event. A ```getter ()``` method returns the state to the component (see: ```:events="this.$store.getters.getEvents"``` in Calendar.vue). 
+```getEvents ()``` is a callback function that dispatches an action in store.js (Vuex store). The action retrieves the inputted event from the database then commits a mutation. State is then updated with the retrieved event. A ```getter ()``` method returns the state to the component (see: ```:events="this.$store.getters.getEvents"``` in Calendar.vue). 
 
 ### Addition Dependencies
 
