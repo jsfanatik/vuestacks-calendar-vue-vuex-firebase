@@ -34,9 +34,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ![alt text](https://raw.githubusercontent.com/jsfanatik/jsfanatik.github.io/master/assets/cal-screen4.JPG)
 
-### Technical Overview
+### Overview
 
 The VueStacks calendar demo utilizes general Vue.js + Firebase CRUD functions to enable creating, updating, and deleting of events in a modified Vuetify calendar component (see the following to learn more about Vuetify calendars: https://vuetifyjs.com/en/components/calendars).
+
+See full component in ```components/Calendar.vue```
 
 #### Note regarding Vuex:
 
