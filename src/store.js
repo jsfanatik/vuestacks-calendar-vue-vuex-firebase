@@ -13,11 +13,6 @@ export default new Vuex.Store({
       state.events = events
     }
   },
-  getters: {
-    getEvents: state => {
-      return state.events
-    }
-  },
   actions: {
     setEvents: async context => {
       let snapshot = await db.collection('calEvent').get()

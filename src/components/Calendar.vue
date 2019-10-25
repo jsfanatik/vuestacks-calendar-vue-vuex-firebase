@@ -66,7 +66,7 @@
           ref="calendar"
           v-model="focus"
           color="primary"
-          :events="this.$store.getters.getEvents"
+          :events="events"
           :event-color="getEventColor"
           :event-margin-bottom="3"
           :now="today"
@@ -125,6 +125,7 @@
 
 <script>
 import { db } from '@/main'
+import { mapState } from 'vuex'
   export default {
     data: () => ({
       today: new Date().toISOString().substr(0, 10),
@@ -145,13 +146,15 @@ import { db } from '@/main'
       selectedEvent: {},
       selectedElement: null,
       selectedOpen: false,
-      events: [],
       dialog: false,
     }),
     mounted () {
       this.getEvents()
     },
     computed: {
+      ...mapState([
+        'events'
+      ]),
       title () {
         const { start, end } = this
         if (!start || !end) {
@@ -204,7 +207,7 @@ import { db } from '@/main'
       },
       async addEvent () {
         if (this.name && this.start && this.end) {
-          await db.collection("calEvent").add({
+          await db.collection('calEvent').add({
             name: this.name,
             details: this.details,
             start: this.start,
@@ -231,7 +234,7 @@ import { db } from '@/main'
         this.currentlyEditing = null
       },
       async deleteEvent (ev) {
-        await db.collection("calEvent").doc(ev).delete()
+        await db.collection('calEvent').doc(ev).delete()
         this.selectedOpen = false,
         this.getEvents()
       },
