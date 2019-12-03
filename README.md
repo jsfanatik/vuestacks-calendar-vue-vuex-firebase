@@ -32,13 +32,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Overview
 
-The VueStacks calendar demo utilizes general Vue.js + Firebase CRUD functions to enable creating, updating, and deleting of events in a modified Vuetify calendar component (see the following to learn more about Vuetify calendars: https://vuetifyjs.com/en/components/calendars).
+The VueStacks calendar demo utilizes general Vue.js, Vuex, and Firebase to enable creating, updating, and deleting of events in a modified Vuetify calendar component (see the following to learn more about Vuetify calendars: https://vuetifyjs.com/en/components/calendars).
 
 See full component in ```components/Calendar.vue```
-
-#### Note regarding Vuex:
-
-```getEvents ()``` is a callback function that dispatches an action in store.js (Vuex store). The action retrieves the inputted event from the database then commits a mutation. State is then updated with the retrieved event. A ```getter ()``` method returns the state to the component (see: ```:events="this.$store.getters.getEvents"``` in Calendar.vue).
 
 ### Addition Dependencies
 
